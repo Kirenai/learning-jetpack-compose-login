@@ -4,10 +4,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import me.kire.re.learninglogin.R
 import me.kire.re.learninglogin.presentation.auth.AuthenticationMode
+import me.kire.re.learninglogin.presentation.auth.Tags.TAG_AUTHENTICATION_BUTTON
 
 @Composable
 fun AuthenticationButton(
@@ -17,7 +19,7 @@ fun AuthenticationButton(
     onAuthenticate: () -> Unit
 ) {
     Button(
-        modifier = modifier,
+        modifier = modifier.testTag(TAG_AUTHENTICATION_BUTTON),
         onClick = onAuthenticate,
         enabled = enableAuthentication
     ) {

@@ -9,11 +9,13 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import me.kire.re.learninglogin.R
+import me.kire.re.learninglogin.presentation.auth.Tags.TAG_INPUT_EMAIL
 
 @Composable
 fun EmailInput(
@@ -23,7 +25,8 @@ fun EmailInput(
     onNextClicked: () -> Unit
 ) {
     TextField(
-        modifier = modifier,
+        modifier = modifier
+            .testTag(TAG_INPUT_EMAIL),
         value = email,
         onValueChange = onEmailChange,
         label = {

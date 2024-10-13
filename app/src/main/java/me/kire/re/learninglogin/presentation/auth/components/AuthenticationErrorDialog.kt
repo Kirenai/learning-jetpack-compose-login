@@ -8,10 +8,12 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import me.kire.re.learninglogin.R
+import me.kire.re.learninglogin.presentation.auth.Tags.TAG_ERROR_ALERT
 
 @Composable
 fun AuthenticationErrorDialog(
@@ -20,7 +22,8 @@ fun AuthenticationErrorDialog(
     dismissError: () -> Unit
 ) {
     AlertDialog(
-        modifier = modifier,
+        modifier = modifier
+            .testTag(TAG_ERROR_ALERT),
         onDismissRequest = dismissError,
         confirmButton = {
             Box(

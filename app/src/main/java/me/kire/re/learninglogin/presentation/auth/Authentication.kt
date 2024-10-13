@@ -8,7 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.lifecycle.viewmodel.compose.viewModel
+import me.kire.re.learninglogin.presentation.auth.Tags.TAG_PROGRESS
 import me.kire.re.learninglogin.presentation.auth.components.AuthenticationErrorDialog
 import me.kire.re.learninglogin.presentation.auth.components.AuthenticationForm
 
@@ -36,7 +38,9 @@ fun AuthenticationContent(
         contentAlignment = Alignment.Center
     ) {
         if (authenticationState.isLoading) {
-            CircularProgressIndicator()
+            CircularProgressIndicator(
+                modifier = Modifier.testTag(TAG_PROGRESS)
+            )
         } else {
             AuthenticationForm(
                 modifier = Modifier.fillMaxSize(),
